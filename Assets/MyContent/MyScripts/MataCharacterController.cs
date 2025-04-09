@@ -31,7 +31,14 @@ public class MataCharacterController : MonoBehaviour
     private float _timer;
     private float _timeJumpPressed;
 
-    
+    private bool isDashing = false;
+    private bool isHovering = false;
+    private bool canHover = true;
+    private float dashStrength = 10f;
+    private Vector2 dashVelocity;
+    private Vector2 dashDirection;
+    private float dashClampX = 50f;
+    private float dashClampY = 50f;
 
     private bool isGrounded;
     private bool hasAttemptedCoyote;
@@ -50,7 +57,13 @@ public class MataCharacterController : MonoBehaviour
     {
         public bool jumpDown;
         public bool jumpHeld;
+        public bool dashDown;
+        public bool dashHeld;
+        public bool hoverDown;
+        public bool hoverHeld;
+        public bool hoverUp;
         public Vector2 moveInput;
+        public Vector2 mousePos;
     }
     #endregion
 
@@ -65,19 +78,54 @@ public class MataCharacterController : MonoBehaviour
         GatherInput();
         _timer += Time.deltaTime;
     }
-
     private void GatherInput()
     {
         _myInput = new MyInput
         {
             jumpDown = Input.GetButtonDown("Jump"),
             jumpHeld = Input.GetButton("Jump"),
-            moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
+            dashDown = Input.GetButtonDown("Dash"),
+            dashHeld = Input.GetButton("Dash"),
+            hoverDown = Input.GetButtonDown("Hover"),
+            hoverHeld = Input.GetButton("Hover"),
+            hoverUp = Input.GetButtonUp("Hover"),
+            moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition)
         };
+        #region if statements
         if (_myInput.jumpDown)
         {
             JumpCheck();
         }
+        if (_myInput.hoverHeld && canHover)
+        {
+            Hover();
+        } 
+        if(_myInput.hoverUp)
+        {
+            isHovering = false;
+        }
+        if(_myInput.dashDown && isHovering)
+        {
+            Dash();
+        }
+        #endregion
+    }
+    private void Dash()
+    {
+        isDashing = true;
+        isHovering = false;
+        Debug.DrawLine(_rb.position, _myInput.mousePos, Color.red, 10f);
+        dashDirection = _rb.position - _myInput.mousePos;
+        dashVelocity = ((dashDirection * dashStrength) * -1);
+        //Fix mouse distance affecting dash strength
+            Debug.Log(dashVelocity);
+    }
+    private void Hover()
+    {
+        //Only in air??
+        isHovering = true;
+        canHover = false;
     }
     private void FixedUpdate()
     {
@@ -94,6 +142,7 @@ public class MataCharacterController : MonoBehaviour
         {
             isGrounded = true;
             airJumps = maxAirJumps;
+            canHover = true;
             if(_myInput.jumpHeld)
             {
                 Jump();
@@ -154,21 +203,36 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Gravity()
     {
-        var inAirGravity = fallAcceleration;
-        if (hasEndedJump)
+        if(isHovering)
         {
-            inAirGravity *= jumpEndEarlyGravityMod;
+            myVelocity.x = 0;
+            myVelocity.y = 0;
         }
         else
         {
-            inAirGravity = fallAcceleration;
+            var inAirGravity = fallAcceleration;
+            if (hasEndedJump)
+            {
+                inAirGravity *= jumpEndEarlyGravityMod;
+            }
+            else
+            {
+                inAirGravity = fallAcceleration;
+            }
+            myVelocity.y = Mathf.MoveTowards(myVelocity.y, -maxFallSpeed, inAirGravity * Time.fixedDeltaTime);
         }
-        myVelocity.y = Mathf.MoveTowards(myVelocity.y, -maxFallSpeed, inAirGravity * Time.fixedDeltaTime);
-        
     }
 
     private void ApplyMovement()
     {
-        _rb.linearVelocity = myVelocity;
+        if(isDashing)
+        {
+            _rb.linearVelocity = myVelocity + dashVelocity;
+            myVelocity = _rb.linearVelocity;
+            isDashing = false;
+        }else
+        {
+            _rb.linearVelocity = myVelocity;
+        } 
     }
 }
