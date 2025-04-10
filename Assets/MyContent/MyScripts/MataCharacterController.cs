@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MataCharacterController : MonoBehaviour
@@ -34,11 +35,11 @@ public class MataCharacterController : MonoBehaviour
     private bool isDashing = false;
     private bool isHovering = false;
     private bool canHover = true;
-    private float dashStrength = 10f;
+    [SerializeField, Range(1, 50)]
+    private float dashStrength = 8f;
     private Vector2 dashVelocity;
     private Vector2 dashDirection;
-    private float dashClampX = 50f;
-    private float dashClampY = 50f;
+    private float hoverSlowMult = 1.5f;
 
     private bool isGrounded;
     private bool hasAttemptedCoyote;
@@ -115,15 +116,42 @@ public class MataCharacterController : MonoBehaviour
     {
         isDashing = true;
         isHovering = false;
-        Debug.DrawLine(_rb.position, _myInput.mousePos, Color.red, 10f);
-        dashDirection = _rb.position - _myInput.mousePos;
-        dashVelocity = ((dashDirection * dashStrength) * -1);
-        //Fix mouse distance affecting dash strength
-            Debug.Log(dashVelocity);
+        dashDirection = (_rb.position - _myInput.mousePos) * -1;
+        Debug.Log(dashDirection);
+        if(dashDirection.x > 0 && dashDirection.y > 1)
+        {
+            dashDirection = new Vector2(1, 1);
+        }
+        else if (dashDirection.x < 0 && dashDirection.y > 1)
+        {
+            dashDirection = new Vector2(-1, 1);
+        }
+        else if(dashDirection.x < 0 && dashDirection.y < -1)
+        {
+            dashDirection = new Vector2(-1, -1);
+        }
+        else if(dashDirection.x > 0 && dashDirection.y < -1)
+        {
+            dashDirection = new Vector2(1, -1);
+        }
+        else
+        {
+            if(dashDirection.x > 0)
+            {
+                dashDirection = new Vector2(1, 0);
+            }
+            else if(dashDirection.x < 0)
+            {
+                dashDirection = new Vector2(-1, 0);
+            }
+            
+        }
+            dashVelocity = (dashDirection * dashStrength) * 10;
     }
     private void Hover()
     {
         //Only in air??
+
         isHovering = true;
         canHover = false;
     }
@@ -199,14 +227,16 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Direction()
     {
-        myVelocity.x = Mathf.MoveTowards(myVelocity.x, _myInput.moveInput.x * moveSpeed, moveAcceleration * Time.fixedDeltaTime);
+        if(!isHovering)
+        {
+            myVelocity.x = Mathf.MoveTowards(myVelocity.x, _myInput.moveInput.x * moveSpeed, moveAcceleration * Time.fixedDeltaTime);
+        }
     }
     private void Gravity()
     {
         if(isHovering)
         {
-            myVelocity.x = 0;
-            myVelocity.y = 0;
+            myVelocity = Vector2.Lerp((myVelocity / hoverSlowMult), new Vector2(0, 0),Time.deltaTime);
         }
         else
         {
