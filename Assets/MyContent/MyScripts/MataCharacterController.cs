@@ -1,10 +1,12 @@
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class MataCharacterController : MonoBehaviour
 {
+    //Variables
     #region Ground Speed
     [SerializeField, Header("Max Speed on Ground"), Range(1,30)]
     private float moveSpeed = 14f;
@@ -26,12 +28,14 @@ public class MataCharacterController : MonoBehaviour
     private float coyoteTime = 0.1f;
     [SerializeField, Header("Force applied to player when they release jump early"), Range(1, 10)]
     private float jumpEndEarlyGravityMod = 3f;
-    #endregion
-
     private float groundedCastDistance = 0.1f;
     private float _timer;
     private float _timeJumpPressed;
-
+    private bool isGrounded;
+    private bool hasAttemptedCoyote;
+    private bool hasEndedJump;
+    #endregion
+    #region Dash
     private bool isDashing = false;
     private bool isHovering = false;
     private bool canHover = true;
@@ -40,11 +44,8 @@ public class MataCharacterController : MonoBehaviour
     private Vector2 dashVelocity;
     private Vector2 dashDirection;
     private float hoverSlowMult = 1.5f;
-
-    private bool isGrounded;
-    private bool hasAttemptedCoyote;
-    private bool hasEndedJump;
-
+    #endregion
+    #region Other
     private LayerMask groundLayer;
 
     private Vector2 myVelocity;
@@ -52,6 +53,11 @@ public class MataCharacterController : MonoBehaviour
     private Rigidbody2D _rb;
     private CapsuleCollider2D _col;
 
+    [SerializeField]
+    private GameObject pauseCanvas;
+
+    private bool gamePaused = false;
+    #endregion
     #region My Input Struct
     private MyInput _myInput;
     public struct MyInput
@@ -65,9 +71,9 @@ public class MataCharacterController : MonoBehaviour
         public bool hoverUp;
         public Vector2 moveInput;
         public Vector2 mousePos;
+        public bool pauseDown;
     }
     #endregion
-
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -91,69 +97,32 @@ public class MataCharacterController : MonoBehaviour
             hoverHeld = Input.GetButton("Hover"),
             hoverUp = Input.GetButtonUp("Hover"),
             moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition)
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition),
+            pauseDown = Input.GetButtonDown("Pause")
         };
-        #region if statements
-        if (_myInput.jumpDown)
+        if (!gamePaused)
         {
-            JumpCheck();
-        }
-        if (_myInput.hoverHeld && canHover)
-        {
-            Hover();
-        } 
-        if(_myInput.hoverUp)
-        {
-            isHovering = false;
-        }
-        if(_myInput.dashDown && isHovering)
-        {
-            Dash();
-        }
-        #endregion
-    }
-    private void Dash()
-    {
-        isDashing = true;
-        isHovering = false;
-        dashDirection = (_rb.position - _myInput.mousePos) * -1;
-        Debug.Log(dashDirection);
-        if(dashDirection.x > 0 && dashDirection.y > 1)
-        {
-            dashDirection = new Vector2(1, 1);
-        }
-        else if (dashDirection.x < 0 && dashDirection.y > 1)
-        {
-            dashDirection = new Vector2(-1, 1);
-        }
-        else if(dashDirection.x < 0 && dashDirection.y < -1)
-        {
-            dashDirection = new Vector2(-1, -1);
-        }
-        else if(dashDirection.x > 0 && dashDirection.y < -1)
-        {
-            dashDirection = new Vector2(1, -1);
-        }
-        else
-        {
-            if(dashDirection.x > 0)
+            if (_myInput.jumpDown)
             {
-                dashDirection = new Vector2(1, 0);
+                JumpCheck();
             }
-            else if(dashDirection.x < 0)
+            if (_myInput.hoverHeld && canHover)
             {
-                dashDirection = new Vector2(-1, 0);
+                Hover();
             }
-            
+            if (_myInput.hoverUp)
+            {
+                isHovering = false;
+            }
+            if (_myInput.dashDown && isHovering)
+            {
+                Dash();
+            }
         }
-            dashVelocity = (dashDirection * dashStrength) * 10;
-    }
-    private void Hover()
-    {
-        //Only in air??
-
-        isHovering = true;
-        canHover = false;
+        if (_myInput.pauseDown)
+        {
+            PauseMyGame();
+        }
     }
     private void FixedUpdate()
     {
@@ -162,6 +131,47 @@ public class MataCharacterController : MonoBehaviour
         GroundCheck();
         JumpHeight();
         ApplyMovement();
+    }
+    private void Dash()
+    {
+        isDashing = true;
+        isHovering = false;
+        dashDirection = (_rb.position - _myInput.mousePos) * -1;
+        Debug.Log(dashDirection);
+        if (dashDirection.x > 0 && dashDirection.y > 1)
+        {
+            dashDirection = new Vector2(1, 1);
+        }
+        else if (dashDirection.x < 0 && dashDirection.y > 1)
+        {
+            dashDirection = new Vector2(-1, 1);
+        }
+        else if (dashDirection.x < 0 && dashDirection.y < -1)
+        {
+            dashDirection = new Vector2(-1, -1);
+        }
+        else if (dashDirection.x > 0 && dashDirection.y < -1)
+        {
+            dashDirection = new Vector2(1, -1);
+        }
+        else
+        {
+            if (dashDirection.x > 0)
+            {
+                dashDirection = new Vector2(1, 0);
+            }
+            else if (dashDirection.x < 0)
+            {
+                dashDirection = new Vector2(-1, 0);
+            }
+
+        }
+        dashVelocity = (dashDirection * dashStrength) * 10;
+    }
+    private void Hover()
+    {
+        isHovering = true;
+        canHover = false;
     }
     private void GroundCheck()
     {
@@ -252,7 +262,6 @@ public class MataCharacterController : MonoBehaviour
             myVelocity.y = Mathf.MoveTowards(myVelocity.y, -maxFallSpeed, inAirGravity * Time.fixedDeltaTime);
         }
     }
-
     private void ApplyMovement()
     {
         if(isDashing)
@@ -264,5 +273,20 @@ public class MataCharacterController : MonoBehaviour
         {
             _rb.linearVelocity = myVelocity;
         } 
+    }
+    public void PauseMyGame()
+    {
+        if(pauseCanvas.activeSelf)
+        {
+            gamePaused = false;
+            pauseCanvas.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            gamePaused = true;
+            pauseCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }
