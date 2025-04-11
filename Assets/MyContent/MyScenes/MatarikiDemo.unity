@@ -1021,6 +1021,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MataCharacterController, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2846553027787797569, guid: 1e156594746406143a593adb2925b00f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1062393932}
+    - target: {fileID: 2846553027787797569, guid: 1e156594746406143a593adb2925b00f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846553027787797569, guid: 1e156594746406143a593adb2925b00f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846553027787797569, guid: 1e156594746406143a593adb2925b00f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3954838687323154015, guid: 1e156594746406143a593adb2925b00f, type: 3}
       propertyPath: m_Name
       value: Pause menu
@@ -1031,7 +1047,7 @@ PrefabInstance:
       objectReference: {fileID: 1062393932}
     - target: {fileID: 6002772385977970255, guid: 1e156594746406143a593adb2925b00f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenMainMenu
+      value: QuitTheGame
       objectReference: {fileID: 0}
     - target: {fileID: 6002772385977970255, guid: 1e156594746406143a593adb2925b00f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
