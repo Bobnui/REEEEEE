@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8773049117537796275}
   - component: {fileID: 7794904514787761397}
   - component: {fileID: 2213022396001634265}
+  - component: {fileID: 7017949086220582523}
+  - component: {fileID: 5981875746451178757}
   m_Layer: 6
   m_Name: PlayerceHolder
   m_TagString: Untagged
@@ -79,12 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 1625812374, guid: 445f456e4b154514898d79d71b55c05f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.44, y: 1.47}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -111,6 +113,7 @@ MonoBehaviour:
   coyoteTime: 0.1
   jumpEndEarlyGravityMod: 3
   dashStrength: 8
+  pauseCanvas: {fileID: 0}
 --- !u!50 &7794904514787761397
 Rigidbody2D:
   serializedVersion: 5
@@ -172,6 +175,40 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.012685597, y: -0.00090408325}
+  m_Size: {x: 1.2746714, y: 1.474771}
   m_Direction: 0
+--- !u!95 &7017949086220582523
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711132660621540512}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bb5a13870901394d92581200a99af1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5981875746451178757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711132660621540512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d294cfc8de897bd4688ecea91f2452c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

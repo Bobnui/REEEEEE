@@ -30,4 +30,8 @@ public class AnimatorProxy : MonoBehaviour
     {
         animator.SetTrigger(triggerName);
     }
+    public void SetFloat(string name, float value)
+    {
+        animator.SetFloat(name, value);
+    }
 }

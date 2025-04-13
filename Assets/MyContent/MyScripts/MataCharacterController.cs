@@ -44,6 +44,7 @@ public class MataCharacterController : MonoBehaviour
     private Vector2 dashVelocity;
     private Vector2 dashDirection;
     private float hoverSlowMult = 1.5f;
+    private float timeHoverPressed;
     #endregion
     #region Other
     private LayerMask groundLayer;
@@ -52,6 +53,8 @@ public class MataCharacterController : MonoBehaviour
 
     private Rigidbody2D _rb;
     private CapsuleCollider2D _col;
+    private AnimatorProxy _anim;
+    private SpriteRenderer _sprite;
 
     [SerializeField]
     private GameObject pauseCanvas;
@@ -78,6 +81,8 @@ public class MataCharacterController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _col = GetComponent<CapsuleCollider2D>();
+        _anim = GetComponent<AnimatorProxy>();
+        _sprite = GetComponent<SpriteRenderer>();
         groundLayer = LayerMask.GetMask("Ground");
     }
     void Update()
@@ -170,6 +175,7 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Hover()
     {
+        timeHoverPressed = 0;
         isHovering = true;
         canHover = false;
     }
@@ -181,6 +187,7 @@ public class MataCharacterController : MonoBehaviour
             isGrounded = true;
             airJumps = maxAirJumps;
             canHover = true;
+            _anim.SetBoolFalse("isJumping");
             if(_myInput.jumpHeld)
             {
                 Jump();
@@ -233,6 +240,7 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Jump()
     {
+        _anim.SetBoolTrue("isJumping");
         myVelocity.y = jumpStrength;
     }
     private void Direction()
@@ -240,6 +248,23 @@ public class MataCharacterController : MonoBehaviour
         if(!isHovering)
         {
             myVelocity.x = Mathf.MoveTowards(myVelocity.x, _myInput.moveInput.x * moveSpeed, moveAcceleration * Time.fixedDeltaTime);
+            float RunAnimatorAid;                        
+            if(myVelocity.x < 0)
+            {
+                _sprite.flipX = true;
+                RunAnimatorAid = 1;
+            }
+            else if(myVelocity.x > 0)
+            {
+                _sprite.flipX = false;
+                RunAnimatorAid = 1;
+            }
+            else
+            {
+                _sprite.flipX = _sprite.flipX;
+                RunAnimatorAid = 0;
+            }
+            _anim.SetFloat("moveSpeed", RunAnimatorAid);
         }
     }
     private void Gravity()
@@ -247,6 +272,11 @@ public class MataCharacterController : MonoBehaviour
         if(isHovering)
         {
             myVelocity = Vector2.Lerp((myVelocity / hoverSlowMult), new Vector2(0, 0),Time.deltaTime);
+            //TIME SLOW
+            timeHoverPressed += Time.deltaTime;
+            float desiredDuration = timeHoverPressed / 0.2f;
+            
+            Time.timeScale = Mathf.Lerp(1f, 0.2f, desiredDuration);
         }
         else
         {
@@ -260,6 +290,7 @@ public class MataCharacterController : MonoBehaviour
                 inAirGravity = fallAcceleration;
             }
             myVelocity.y = Mathf.MoveTowards(myVelocity.y, -maxFallSpeed, inAirGravity * Time.fixedDeltaTime);
+            Time.timeScale = 1;
         }
     }
     private void ApplyMovement()
