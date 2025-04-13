@@ -992,10 +992,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6880534781475030494, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8773049117537796275, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
       propertyPath: pauseCanvas
       value: 
