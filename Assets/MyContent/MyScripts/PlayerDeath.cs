@@ -5,7 +5,7 @@ public class PlayerDeath : MonoBehaviour
     private Material dissolveMaterial;
 
     private float dissolveAmount;
-    [SerializeField, Range(0, 1)] private float dissolveSpeed = 1;
+    private float dissolveSpeed;
 
     private bool shouldDissolve = false;
 
@@ -38,8 +38,9 @@ public class PlayerDeath : MonoBehaviour
             }
         }
     }
-    public void SetDissolveMaterial(Material newMaterial)
+    public void SetDissolveMaterial(Material newMaterial, float disSpeed)
     {
+        dissolveSpeed = disSpeed;
         GetComponent<SpriteRenderer>().material = newMaterial;
         dissolveMaterial = GetComponent <SpriteRenderer>().material;
         characterController.isDead = true;
