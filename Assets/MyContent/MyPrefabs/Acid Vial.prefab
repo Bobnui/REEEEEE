@@ -271,7 +271,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4984906783695806044}
   - component: {fileID: 6334784855714658580}
-  - component: {fileID: 2764888385887167402}
   m_Layer: 0
   m_Name: Bottle
   m_TagString: Untagged
@@ -353,42 +352,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2764888385887167402
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6355109167753185522}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
 --- !u!1 &8363418788779619940
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +449,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7283595148601764789}
   - component: {fileID: 6031071583693606714}
-  - component: {fileID: 7428694976141437324}
+  - component: {fileID: 4790231776488040462}
+  - component: {fileID: 6030910851722220520}
   m_Layer: 0
   m_Name: Acid Vial
   m_TagString: Untagged
@@ -503,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 8761252413949847031}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.38, y: 2.9190001, z: 0}
+  m_LocalPosition: {x: -0.66999996, y: 2.9190001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -537,7 +501,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7428694976141437324
+--- !u!58 &4790231776488040462
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761252413949847031}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.34607404
+--- !u!114 &6030910851722220520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -546,7 +546,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8761252413949847031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e0c79e8b40d5d42b50be0f2ca4e70e, type: 3}
+  m_Script: {fileID: 11500000, guid: 16627bbb9c6b150448df14947c73ff57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _col: {fileID: 0}
+  deathMaterial: {fileID: 2100000, guid: d1d0c28e71df10e46aa7b46a0fdf40e2, type: 2}
+  destroyOnTrigger: 1

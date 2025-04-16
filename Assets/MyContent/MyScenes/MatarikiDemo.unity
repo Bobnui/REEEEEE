@@ -4204,6 +4204,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7017949086220582523, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2bb5a13870901394d92581200a99af1f, type: 2}
     - target: {fileID: 8773049117537796275, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
       propertyPath: pauseCanvas
       value: 
@@ -4227,7 +4231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8691116822696915716, guid: e443559dc6f32fb41b3e950b11e38ce5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.85
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 8691116822696915716, guid: e443559dc6f32fb41b3e950b11e38ce5, type: 3}
       propertyPath: m_LocalPosition.y

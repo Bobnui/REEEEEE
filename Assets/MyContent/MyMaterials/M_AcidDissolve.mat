@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissololve1 1
+  m_Name: M_AcidDissolve
   m_Shader: {fileID: -6465566751694194690, guid: 0de820023363b8044901e4835e76ca82, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -55,12 +55,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _Dissolve_Amount: 0
-    - _Dissolve_Scale: 71
-    - _Outline_Thickness: 0.013
-    - _Speed: 0.57
+    - _Dissolve_Scale: 18.1
+    - _Outline_Thickness: 0.22
+    - _Speed: 0
     - _Spiral_Strength: 0
     m_Colors:
-    - _Outline_Colour: {r: 1, g: 0, b: 0.010215759, a: 1}
+    - _Outline_Colour: {r: 0.073298454, g: 1, b: 0, a: 1}
     - _Sipral_Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

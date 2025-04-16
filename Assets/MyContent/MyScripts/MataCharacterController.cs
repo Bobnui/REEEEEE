@@ -44,7 +44,6 @@ public class MataCharacterController : MonoBehaviour
     private Vector2 dashVelocity;
     private Vector2 dashDirection;
     private float hoverSlowMult = 1.5f;
-    private float timeHoverPressed;
     #endregion
     #region Other
     private LayerMask groundLayer;
@@ -60,6 +59,7 @@ public class MataCharacterController : MonoBehaviour
     private GameObject pauseCanvas;
 
     private bool gamePaused = false;
+    public bool isDead = false;
     #endregion
     #region My Input Struct
     private MyInput _myInput;
@@ -175,7 +175,6 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Hover()
     {
-        timeHoverPressed = 0;
         isHovering = true;
         canHover = false;
     }
@@ -272,11 +271,6 @@ public class MataCharacterController : MonoBehaviour
         if(isHovering)
         {
             myVelocity = Vector2.Lerp((myVelocity / hoverSlowMult), new Vector2(0, 0),Time.deltaTime);
-            //TIME SLOW
-            //timeHoverPressed += Time.deltaTime;
-            //float desiredDuration = timeHoverPressed / 0.2f;
-            
-            //Time.timeScale = Mathf.Lerp(1f, 0.2f, desiredDuration);
         }
         else
         {
@@ -319,5 +313,9 @@ public class MataCharacterController : MonoBehaviour
             pauseCanvas.SetActive(true);
             Time.timeScale = 0;
         }
+    }
+    public void SetAnimator(bool enabled)
+    {
+        gameObject.GetComponent<Animator>().enabled = enabled;
     }
 }

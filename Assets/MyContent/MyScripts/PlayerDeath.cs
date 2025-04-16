@@ -10,12 +10,17 @@ public class PlayerDeath : MonoBehaviour
     private bool shouldDissolve = false;
 
     private Rigidbody2D _rb;
+    private RigidbodyConstraints2D defaultConstraints;
+    private Material defaultMaterial;
+    private MataCharacterController characterController;
 
     private void Awake()
     {
-        dissolveMaterial = GetComponent<SpriteRenderer>().material;
+        defaultMaterial = GetComponent<SpriteRenderer>().material;
         _rb = GetComponent<Rigidbody2D>();
         dissolveAmount = 0;
+        defaultConstraints = _rb.constraints;
+        characterController = GetComponent<MataCharacterController>();
     }
     private void Update()
     {
@@ -37,16 +42,21 @@ public class PlayerDeath : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().material = newMaterial;
         dissolveMaterial = GetComponent <SpriteRenderer>().material;
+        characterController.isDead = true;
+        Die();
     }
     public void Die()
     {
         dissolveAmount = 0;
         shouldDissolve = true;
-        _rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        _rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     private void Unfreeze()
     {
-        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _rb.constraints = defaultConstraints;
+        GetComponent<SpriteRenderer>().material = defaultMaterial;
+        characterController.isDead = false;
+        characterController.SetAnimator(true);
     }
 }
