@@ -273,10 +273,10 @@ public class MataCharacterController : MonoBehaviour
         {
             myVelocity = Vector2.Lerp((myVelocity / hoverSlowMult), new Vector2(0, 0),Time.deltaTime);
             //TIME SLOW
-            timeHoverPressed += Time.deltaTime;
-            float desiredDuration = timeHoverPressed / 0.2f;
+            //timeHoverPressed += Time.deltaTime;
+            //float desiredDuration = timeHoverPressed / 0.2f;
             
-            Time.timeScale = Mathf.Lerp(1f, 0.2f, desiredDuration);
+            //Time.timeScale = Mathf.Lerp(1f, 0.2f, desiredDuration);
         }
         else
         {

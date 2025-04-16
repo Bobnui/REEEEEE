@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 2213022396001634265}
   - component: {fileID: 7017949086220582523}
   - component: {fileID: 5981875746451178757}
+  - component: {fileID: 6715237662604375739}
   m_Layer: 6
   m_Name: PlayerceHolder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 7a83e1e290d6fe94595d9c1b30d6c58f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,7 +113,7 @@ MonoBehaviour:
   fallAcceleration: 110
   coyoteTime: 0.1
   jumpEndEarlyGravityMod: 3
-  dashStrength: 8
+  dashStrength: 3.5
   pauseCanvas: {fileID: 0}
 --- !u!50 &7794904514787761397
 Rigidbody2D:
@@ -212,3 +213,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d294cfc8de897bd4688ecea91f2452c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6715237662604375739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711132660621540512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38afdd5335986cf4fba1086e511cb51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveSpeed: 1

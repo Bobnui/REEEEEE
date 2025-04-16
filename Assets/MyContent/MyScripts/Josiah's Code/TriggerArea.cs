@@ -22,22 +22,22 @@ public class TriggerArea : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         OnObjectEnteredArea?.Invoke();
-        Debug.Log("Object entered");
+        //Debug.Log("Object entered");
         if (collision.tag == "Player")
         {
             OnPlayerEnteredArea?.Invoke();
-            Debug.Log("Player entered");
+            //Debug.Log("Player entered");
         }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         OnObjectLeftArea?.Invoke();
-        Debug.Log("Object left");
+        //Debug.Log("Object left");
         if (collision.tag == "Player")
         {
             OnPlayerLeftArea?.Invoke();
-            Debug.Log("Player left");
+            //Debug.Log("Player left");
         }
     }
 }
