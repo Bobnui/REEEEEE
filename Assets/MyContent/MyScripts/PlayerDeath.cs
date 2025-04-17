@@ -14,6 +14,8 @@ public class PlayerDeath : MonoBehaviour
     private Material defaultMaterial;
     private MataCharacterController characterController;
 
+    private Vector3 respawnLocation = Vector3.zero;
+
     private void Awake()
     {
         defaultMaterial = GetComponent<SpriteRenderer>().material;
@@ -31,7 +33,7 @@ public class PlayerDeath : MonoBehaviour
             if(dissolveAmount >= 1.2)
             {
                 shouldDissolve = false;
-                transform. position = Vector3.zero;
+                transform. position = respawnLocation;
                 Unfreeze();
                 dissolveMaterial.SetFloat("_Dissolve_Amount", 0);
                 dissolveAmount = 0;
@@ -59,5 +61,10 @@ public class PlayerDeath : MonoBehaviour
         GetComponent<SpriteRenderer>().material = defaultMaterial;
         characterController.isDead = false;
         characterController.SetAnimator(true);
+    }
+
+    public void SetRespawnLocation(Vector3 newrespawn)
+    {
+         respawnLocation = newrespawn;
     }
 }

@@ -115,6 +115,7 @@ MonoBehaviour:
   jumpEndEarlyGravityMod: 3
   dashStrength: 3.5
   pauseCanvas: {fileID: 0}
+  isDead: 0
 --- !u!50 &7794904514787761397
 Rigidbody2D:
   serializedVersion: 5
@@ -225,4 +226,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38afdd5335986cf4fba1086e511cb51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolveSpeed: 1

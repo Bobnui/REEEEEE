@@ -244,7 +244,7 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Direction()
     {
-        if(!isHovering)
+        if(!isHovering && !isDead)
         {
             myVelocity.x = Mathf.MoveTowards(myVelocity.x, _myInput.moveInput.x * moveSpeed, moveAcceleration * Time.fixedDeltaTime);
             float RunAnimatorAid;                        

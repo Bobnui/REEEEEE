@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    public void OpenMainMenu()
+    public void OpenScene(int index)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(index);
     }
     public void QuitTheGame()
     {
