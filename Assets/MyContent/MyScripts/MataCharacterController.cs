@@ -65,15 +65,15 @@ public class MataCharacterController : MonoBehaviour
     #region My Input
     
     
-        public bool jumpDown;
-        public bool jumpHeld;
-        public bool dashDown;
-        public bool hoverDown;
-        public bool hoverHeld;
-        public bool hoverUp;
-        public Vector2 moveInput;
-        public Vector2 mousePos;
-        public bool pauseDown;
+        private bool jumpDown;
+        private bool jumpHeld;
+        private bool dashDown;
+        private bool hoverDown;
+        private bool hoverHeld;
+        private bool hoverUp;
+        private Vector2 moveInput;
+        private Vector2 mousePos;
+        private bool pauseDown;
     
     #endregion
     private void Awake()
@@ -91,9 +91,6 @@ public class MataCharacterController : MonoBehaviour
     }
     private void GatherInput()
     {
-
-
-
         jumpDown = PlayInput.instance.Jump;
         jumpHeld = PlayInput.instance.JumpHeld;
         dashDown = PlayInput.instance.Dash;
@@ -110,7 +107,7 @@ public class MataCharacterController : MonoBehaviour
             {
                 JumpCheck();
             }
-            if (hoverHeld && canHover)
+            if (hoverDown && canHover)
             {
                 Hover();
             }
@@ -315,5 +312,13 @@ public class MataCharacterController : MonoBehaviour
     public void SetAnimator(bool enabled)
     {
         gameObject.GetComponent<Animator>().enabled = enabled;
+    }
+    public void ResetAirMobility(bool resetHover, int resetAirJumps)
+    {
+        if(resetHover)
+        {
+            canHover = true;
+        }
+            airJumps += resetAirJumps;
     }
 }
