@@ -15,5 +15,6 @@ EditorBuildSettings:
     path: Assets/MyContent/MyScenes/MatarikiDemo.unity
     guid: 4c0b8e8d33653c94da5ba26379df3b68
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 2d3f223ad950536459770a9476499960, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
