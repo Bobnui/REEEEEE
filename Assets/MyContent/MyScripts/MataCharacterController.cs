@@ -62,21 +62,19 @@ public class MataCharacterController : MonoBehaviour
     private bool gamePaused = false;
     public bool isDead = false;
     #endregion
-    #region My Input Struct
-    private MyInput _myInput;
-    public struct MyInput
-    {
+    #region My Input
+    
+    
         public bool jumpDown;
         public bool jumpHeld;
         public bool dashDown;
-        public bool dashHeld;
         public bool hoverDown;
         public bool hoverHeld;
         public bool hoverUp;
         public Vector2 moveInput;
         public Vector2 mousePos;
         public bool pauseDown;
-    }
+    
     #endregion
     private void Awake()
     {
@@ -93,39 +91,39 @@ public class MataCharacterController : MonoBehaviour
     }
     private void GatherInput()
     {
-        _myInput = new MyInput
-        {
-            jumpDown = Input.GetButtonDown("Jump"),
-            jumpHeld = Input.GetButton("Jump"),
-            dashDown = Input.GetButtonDown("Dash"),
-            dashHeld = Input.GetButton("Dash"),
-            hoverDown = Input.GetButtonDown("Hover"),
-            hoverHeld = Input.GetButton("Hover"),
-            hoverUp = Input.GetButtonUp("Hover"),
-            moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition),
-            pauseDown = Input.GetButtonDown("Pause")
-        };
+
+
+
+        jumpDown = PlayInput.instance.Jump;
+        jumpHeld = PlayInput.instance.JumpHeld;
+        dashDown = PlayInput.instance.Dash;
+        hoverDown = PlayInput.instance.Hover;
+        hoverHeld = PlayInput.instance.HoverHeld;
+        hoverUp = PlayInput.instance.HoverUp;
+        moveInput = PlayInput.instance.Move;
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        pauseDown = PlayInput.instance.Menu;
+        
         if (!gamePaused)
         {
-            if (_myInput.jumpDown)
+            if (jumpDown)
             {
                 JumpCheck();
             }
-            if (_myInput.hoverHeld && canHover)
+            if (hoverHeld && canHover)
             {
                 Hover();
             }
-            if (_myInput.hoverUp)
+            if (hoverUp)
             {
                 isHovering = false;
             }
-            if (_myInput.dashDown && isHovering)
+            if (dashDown && isHovering)
             {
                 Dash();
             }
         }
-        if (_myInput.pauseDown)
+        if (pauseDown)
         {
             PauseMyGame();
         }
@@ -142,8 +140,7 @@ public class MataCharacterController : MonoBehaviour
     {
         isDashing = true;
         isHovering = false;
-        dashDirection = (_rb.position - _myInput.mousePos) * -1;
-        Debug.Log(dashDirection);
+        dashDirection = (_rb.position - mousePos) * -1;
         if (dashDirection.x > 0 && dashDirection.y > 1)
         {
             dashDirection = new Vector2(1, 1);
@@ -188,7 +185,7 @@ public class MataCharacterController : MonoBehaviour
             airJumps = maxAirJumps;
             canHover = true;
             _anim.SetBoolFalse("isJumping");
-            if(_myInput.jumpHeld)
+            if(jumpHeld)
             {
                 Jump();
             }
@@ -229,7 +226,7 @@ public class MataCharacterController : MonoBehaviour
     }
     private void JumpHeight()
     {
-        if(_rb.linearVelocityY > 0 && !hasEndedJump && !_myInput.jumpHeld && !isGrounded)
+        if(_rb.linearVelocityY > 0 && !hasEndedJump && !jumpHeld && !isGrounded)
         {
             hasEndedJump = true;
         }
@@ -247,7 +244,7 @@ public class MataCharacterController : MonoBehaviour
     {
         if(!isHovering && !isDead)
         {
-            myVelocity.x = Mathf.MoveTowards(myVelocity.x, _myInput.moveInput.x * moveSpeed, moveAcceleration * Time.fixedDeltaTime);
+            myVelocity.x = Mathf.MoveTowards(myVelocity.x, moveInput.x * moveSpeed, moveAcceleration * Time.fixedDeltaTime);
             float RunAnimatorAid;                        
             if(myVelocity.x < 0)
             {
