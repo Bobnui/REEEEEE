@@ -41,5 +41,29 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Parallax 1
+    uniqueID: 1610313309
+    locked: 0
+  - name: Parallax 2
+    uniqueID: 1165451353
+    locked: 0
+  - name: Parallax 3
+    uniqueID: 1880366409
+    locked: 0
+  - name: Level Behind
+    uniqueID: 4294574103
+    locked: 0
+  - name: Player
+    uniqueID: 2661575623
+    locked: 0
+  - name: Level In Front
+    uniqueID: 2579347229
+    locked: 0
+  - name: Parallax 4
+    uniqueID: 805269515
+    locked: 0
+  - name: Front of Scene
+    uniqueID: 3864485985
+    locked: 0
   m_RenderingLayers:
   - Default
