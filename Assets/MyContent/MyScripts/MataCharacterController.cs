@@ -191,6 +191,7 @@ public class MataCharacterController : MonoBehaviour
                 hasAttemptedCoyote = false;
                 if (_timer < _timeJumpPressed + coyoteTime)
                 {
+                    SFXManager.Instance.PlayClip("jump", transform, 1);
                     Jump();
                 }
             }
@@ -204,10 +205,12 @@ public class MataCharacterController : MonoBehaviour
     {
         if (isGrounded)
         {
+            SFXManager.Instance.PlayClip("jump", transform, 1);
             Jump();
         }
         else if(airJumps > 0)
         {
+            SFXManager.Instance.PlayClip("jump", transform, 1);
             airJumps -= 1;
             Jump();
         }
