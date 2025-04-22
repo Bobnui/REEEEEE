@@ -220,6 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fc8ebb31919d14d8bc90fa50723a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcidVial: {fileID: 8761252413949847031, guid: a0407c8161f3cbe4c9c59a69f78aafa9, type: 3}
+  spawnedObject: {fileID: 8761252413949847031, guid: a0407c8161f3cbe4c9c59a69f78aafa9, type: 3}
   barrelTransform: {fileID: 1337120500842498420}
   spawnTime: 2
