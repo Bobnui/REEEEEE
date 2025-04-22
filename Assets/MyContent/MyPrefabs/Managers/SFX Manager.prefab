@@ -54,14 +54,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ad11d4005deb0a4cae0fc645b79bb5e, type: 3}
   hoverSounds:
   - {fileID: 8300000, guid: 6aeb2b53fe178264188a5af13c31db5d, type: 3}
+  footstepSounds:
+  - {fileID: 8300000, guid: 7b578baf63844304cbef5ba73f5a0716, type: 3}
+  - {fileID: 8300000, guid: 49544ffc1f5525c4b81fcc6a09a31c94, type: 3}
+  - {fileID: 8300000, guid: c23bfda8edb82fd49a176f2306075245, type: 3}
   checkpointSounds:
   - {fileID: 8300000, guid: 26baebb8a65fd974993b8a8c18cd3202, type: 3}
   cannonfireSounds:
   - {fileID: 8300000, guid: 7a92a1a102357fc4c9674488f9a62091, type: 3}
   cannonimpactSounds:
   - {fileID: 8300000, guid: 3587c664d0199324a9abdd5239892289, type: 3}
-  dropperfireSounds: []
-  dropperimpactSounds: []
+  dropperfireSounds:
+  - {fileID: 8300000, guid: ffc0bc02a7bff6c47ae2f08fa2d12949, type: 3}
+  dropperimpactSounds:
+  - {fileID: 8300000, guid: 103dba59b32a8314597b7a31ff0e0e75, type: 3}
   PlayAmbient: 0
 --- !u!82 &568675489111600883
 AudioSource:

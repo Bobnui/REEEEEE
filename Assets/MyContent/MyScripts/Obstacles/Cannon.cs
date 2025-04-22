@@ -28,6 +28,6 @@ public class Cannon : MonoBehaviour
     private void SpawnProjectile()
     {
         Instantiate(projectile, barrelTransform.position, barrelTransform.rotation);
-        SFXManager.Instance.PlayClip("cannonfire", transform, 1);
+        SFXManager.Instance.PlayClip("cannonfire", transform, 1, true);
     }
 }

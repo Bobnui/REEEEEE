@@ -74,7 +74,7 @@ public class PlayerDeath : MonoBehaviour
         else
         {
             CurrentCheckpoint = NewCheckpoint;
-            SFXManager.Instance.PlayClip("checkpoint", transform, 1);
+            SFXManager.Instance.PlayClip("checkpoint", transform, 1, false);
         }
          respawnLocation = newrespawn;
     }

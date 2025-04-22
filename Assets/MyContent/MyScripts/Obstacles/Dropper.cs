@@ -32,6 +32,7 @@ public class Dropper : MonoBehaviour
         t.rotation = Quaternion.Euler(0, 0, 0);
         t.localScale = Vector3.one;
 
+        SFXManager.Instance.PlayClip("dropperfire", transform, 1, true);
         Instantiate(spawnedObject, barrelTransform.position, barrelTransform.rotation);
     }
 }

@@ -135,7 +135,7 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Dash()
     {
-        SFXManager.Instance.PlayClip("dash", transform, 1);
+        SFXManager.Instance.PlayClip("dash", transform, 1, false);
         isDashing = true;
         isHovering = false;
         dashDirection = (_rb.position - mousePos) * -1;
@@ -171,7 +171,7 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Hover()
     {
-        SFXManager.Instance.PlayClip("hover", transform, 1);
+        SFXManager.Instance.PlayClip("hover", transform, 1, false);
         isHovering = true;
         canHover = false;
     }
@@ -193,7 +193,7 @@ public class MataCharacterController : MonoBehaviour
                 hasAttemptedCoyote = false;
                 if (_timer < _timeJumpPressed + coyoteTime)
                 {
-                    SFXManager.Instance.PlayClip("jump", transform, 1);
+                    SFXManager.Instance.PlayClip("jump", transform, 1, false);
                     Jump();
                 }
             }
@@ -207,12 +207,12 @@ public class MataCharacterController : MonoBehaviour
     {
         if (isGrounded)
         {
-            SFXManager.Instance.PlayClip("jump", transform, 1);
+            SFXManager.Instance.PlayClip("jump", transform, 1, false);
             Jump();
         }
         else if(airJumps > 0)
         {
-            SFXManager.Instance.PlayClip("jump", transform, 1);
+            SFXManager.Instance.PlayClip("jump", transform, 1, false);
             airJumps -= 1;
             Jump();
         }

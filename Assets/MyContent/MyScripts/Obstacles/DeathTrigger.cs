@@ -3,9 +3,12 @@ using UnityEngine;
 public class DeathTrigger : MonoBehaviour
 {
     [SerializeField] private Material deathMaterial;
-    [SerializeField] private bool destroyOnTrigger = false;
     [SerializeField, Range(0, 4)] public float dissolveSpeed = 1;
     private enum objectTypes {Cannonball, DroppedObject}
+
+
+    [SerializeField] private bool destroyOnTrigger = false;
+    [Header("Only relevant if destroyed on trigger")]
     [SerializeField] private objectTypes objectType;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,11 +23,11 @@ public class DeathTrigger : MonoBehaviour
         switch(objectType)
             {
                 case objectTypes.Cannonball:
-                    SFXManager.Instance.PlayClip("cannonimpact", transform, 1);
+                    SFXManager.Instance.PlayClip("cannonimpact", transform, 1, true);
                     Destroy(gameObject);
                     break;
                 case objectTypes.DroppedObject:
-                    SFXManager.Instance.PlayClip("dropperfire", transform, 1);
+                    SFXManager.Instance.PlayClip("dropperimpact", transform, 1, true);
                     Destroy(gameObject);
                     break;
             }

@@ -10,6 +10,7 @@ public class SFXManager : MonoBehaviour
     [SerializeField] private AudioClip[] jumpSounds;
     [SerializeField] private AudioClip[] dashSounds;
     [SerializeField] private AudioClip[] hoverSounds;
+    [SerializeField] private AudioClip[] footstepSounds;
 
     [Header("Checkpoint")]
     [SerializeField] private AudioClip[] checkpointSounds;
@@ -43,11 +44,20 @@ public class SFXManager : MonoBehaviour
             ambientSource.mute = true;
         }
     }
-    public void PlayClip(string clip, Transform spawnTransform, float volume)
+    public void PlayClip(string clip, Transform spawnTransform, float volume, bool is3d)
     {
         AudioSource audioSource = Instantiate(soundFXobject, spawnTransform.position, Quaternion.identity);
 
         audioSource.volume = volume;
+
+        if (is3d) 
+        { 
+            audioSource.spatialBlend = 1; 
+        }
+        else 
+        { 
+            audioSource.spatialBlend = 0; 
+        }
 
         if(clip == "jump")
         {
@@ -88,6 +98,11 @@ public class SFXManager : MonoBehaviour
         {
             int randInt = Random.Range(0, dropperimpactSounds.Length);
             audioSource.clip = dropperimpactSounds[randInt];
+        }
+        else if(clip == "footstep")
+        {
+            int randInt = Random.Range(0, footstepSounds.Length);
+            audioSource.clip = footstepSounds[randInt];
         }
 
         audioSource.Play();

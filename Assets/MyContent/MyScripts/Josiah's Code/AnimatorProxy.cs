@@ -34,4 +34,8 @@ public class AnimatorProxy : MonoBehaviour
     {
         animator.SetFloat(name, value);
     }
+    public void PlayFootstep()
+    {
+        SFXManager.Instance.PlayClip("footstep", transform, 1, false);
+    }
 }

@@ -552,3 +552,4 @@ MonoBehaviour:
   deathMaterial: {fileID: 2100000, guid: d1d0c28e71df10e46aa7b46a0fdf40e2, type: 2}
   destroyOnTrigger: 1
   dissolveSpeed: 1
+  objectType: 1
