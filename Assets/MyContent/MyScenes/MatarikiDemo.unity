@@ -15977,6 +15977,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Air PowerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 4239830103753741474, guid: e71ae19c35d4a2846a4066deace7360e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239830103753741474, guid: e71ae19c35d4a2846a4066deace7360e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5453140072905143681, guid: e71ae19c35d4a2846a4066deace7360e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
