@@ -111,22 +111,13 @@ MonoBehaviour:
   moveAcceleration: 150
   jumpStrength: 36
   maxAirJumps: 1
-  maxFallSpeed: 40
+  maxFallSpeed: 60
   fallAcceleration: 110
   coyoteTime: 0.1
   jumpEndEarlyGravityMod: 3
-  dashStrength: 3.5
+  dashStrength: 5.3
   pauseCanvas: {fileID: 0}
   isDead: 0
-  jumpDown: 0
-  jumpHeld: 0
-  dashDown: 0
-  hoverDown: 0
-  hoverHeld: 0
-  hoverUp: 0
-  moveInput: {x: 0, y: 0}
-  mousePos: {x: 0, y: 0}
-  pauseDown: 0
 --- !u!50 &7794904514787761397
 Rigidbody2D:
   serializedVersion: 5

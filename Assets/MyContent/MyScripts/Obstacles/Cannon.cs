@@ -10,11 +10,17 @@ public class Cannon : MonoBehaviour
     [SerializeField]
     private Transform barrelTransform;
 
+    [Header("Projectile Spawn Rate")]
     [SerializeField]
     private float spawnTime = 1;
+    [SerializeField] private float firstShotDelay = 0;
+
+    [Header("Projectile Trajectory")]
+    [SerializeField, Range(0, 10)] private float mySpeed = 5;
+    [SerializeField, Range(0, 5)] private float myGravityScale = 0f;
     private void Awake()
     {
-        _timer = 0;
+        _timer = 0 - firstShotDelay;
     }
     private void FixedUpdate()
     {
@@ -27,7 +33,9 @@ public class Cannon : MonoBehaviour
     }
     private void SpawnProjectile()
     {
-        Instantiate(projectile, barrelTransform.position, barrelTransform.rotation);
+        var obj = Instantiate(projectile, barrelTransform.position, barrelTransform.rotation);
         SFXManager.Instance.PlayClip("cannonfire", transform, 1, true);
+        Projectile myScript = obj.GetComponent<Projectile>();
+        myScript.SetProjectileParameters(mySpeed, myGravityScale);
     }
 }

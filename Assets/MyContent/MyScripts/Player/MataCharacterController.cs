@@ -186,7 +186,7 @@ public class MataCharacterController : MonoBehaviour
             _anim.SetBoolFalse("isJumping");
             if(jumpHeld)
             {
-                Jump();
+                Jump(0);
             }
             if(hasAttemptedCoyote)
             {
@@ -194,13 +194,14 @@ public class MataCharacterController : MonoBehaviour
                 if (_timer < _timeJumpPressed + coyoteTime)
                 {
                     SFXManager.Instance.PlayClip("jump", transform, 1, false);
-                    Jump();
+                    Jump(0);
                 }
             }
         }
         else
         {
             isGrounded = false;
+            Debug.Log(isGrounded);
         }
     }
     private void JumpCheck()
@@ -208,13 +209,13 @@ public class MataCharacterController : MonoBehaviour
         if (isGrounded)
         {
             SFXManager.Instance.PlayClip("jump", transform, 1, false);
-            Jump();
+            Jump(0);
         }
         else if(airJumps > 0)
         {
             SFXManager.Instance.PlayClip("jump", transform, 1, false);
             airJumps -= 1;
-            Jump();
+            Jump(0);
         }
         else
         {
@@ -237,10 +238,10 @@ public class MataCharacterController : MonoBehaviour
             hasEndedJump = false;
         }
     }
-    private void Jump()
+    public void Jump(float extraForce)
     {
         _anim.SetBoolTrue("isJumping");
-        myVelocity.y = jumpStrength;
+        myVelocity.y = jumpStrength + extraForce;
     }
     private void Direction()
     {
