@@ -68,6 +68,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ffc0bc02a7bff6c47ae2f08fa2d12949, type: 3}
   dropperimpactSounds:
   - {fileID: 8300000, guid: 103dba59b32a8314597b7a31ff0e0e75, type: 3}
+  collectedSounds:
+  - {fileID: 8300000, guid: 0e2c3eed19e522b43b5625a2e2f9c580, type: 3}
+  - {fileID: 8300000, guid: f5bf2e63b592a3e44a621ff05f625c29, type: 3}
+  - {fileID: 8300000, guid: aa7f0a8ee236749419a57389a909a511, type: 3}
   PlayAmbient: 0
 --- !u!82 &568675489111600883
 AudioSource:

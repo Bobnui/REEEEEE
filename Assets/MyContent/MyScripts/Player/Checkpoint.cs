@@ -4,9 +4,9 @@ public class Checkpoint : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.gameObject.TryGetComponent(out PlayerDeath death))
         {
-            collision.gameObject.GetComponent<PlayerDeath>().SetRespawnLocation(transform.position, gameObject.GetComponent<Checkpoint>());
+            death.SetRespawnLocation(transform.position, this);
         }
     }
 }

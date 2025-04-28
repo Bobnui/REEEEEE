@@ -5,7 +5,7 @@ public class AirPowerUp : MonoBehaviour
     private MataCharacterController characterController;
 
     [SerializeField] private bool resetHover = false;
-    [SerializeField] private int addedAirJumps = 0;
+    [SerializeField, Range(0, 1)] private int addedAirJumps = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

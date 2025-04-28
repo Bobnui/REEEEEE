@@ -15,6 +15,7 @@ public class MataCharacterController : MonoBehaviour
     private float moveAcceleration = 150f;
     #endregion
     #region Jump
+    
     [SerializeField, Header("Power of Jump"), Range(10, 80)]
     private float jumpStrength = 36f;
     //Counts Remaining air jumps
@@ -35,6 +36,7 @@ public class MataCharacterController : MonoBehaviour
     private bool isGrounded;
     private bool hasAttemptedCoyote;
     private bool hasEndedJump;
+    public bool hasjumped = true; //set from jump pad
     #endregion
     #region Dash
     private bool isDashing = false;
@@ -180,6 +182,7 @@ public class MataCharacterController : MonoBehaviour
         Vector2 foot = transform.position + Vector3.down * _col.bounds.extents.y + (Vector3)_col.offset;
         if(Physics2D.Raycast(foot, Vector2.down, groundedCastDistance, groundLayer))
         {
+            hasjumped = false;
             isGrounded = true;
             airJumps = maxAirJumps;
             canHover = true;
@@ -201,7 +204,6 @@ public class MataCharacterController : MonoBehaviour
         else
         {
             isGrounded = false;
-            Debug.Log(isGrounded);
         }
     }
     private void JumpCheck()
@@ -210,6 +212,7 @@ public class MataCharacterController : MonoBehaviour
         {
             SFXManager.Instance.PlayClip("jump", transform, 1, false);
             Jump(0);
+
         }
         else if(airJumps > 0)
         {
@@ -242,6 +245,7 @@ public class MataCharacterController : MonoBehaviour
     {
         _anim.SetBoolTrue("isJumping");
         myVelocity.y = jumpStrength + extraForce;
+        hasjumped = true;
     }
     private void Direction()
     {
@@ -284,8 +288,11 @@ public class MataCharacterController : MonoBehaviour
             {
                 inAirGravity = fallAcceleration;
             }
-            myVelocity.y = Mathf.MoveTowards(myVelocity.y, -maxFallSpeed, inAirGravity * Time.fixedDeltaTime);
-            Time.timeScale = 1;
+            if(hasjumped)
+            {
+                myVelocity.y = Mathf.MoveTowards(myVelocity.y, -maxFallSpeed, inAirGravity * Time.fixedDeltaTime);
+                Time.timeScale = 1;
+            }
         }
     }
     private void ApplyMovement()

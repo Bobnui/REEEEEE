@@ -11,4 +11,9 @@ public class JumpPad : MonoBehaviour
             collision.GetComponent<MataCharacterController>().Jump(lauchPower * 10);
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        collision.GetComponent<MataCharacterController>().hasjumped = true;
+    }
 }

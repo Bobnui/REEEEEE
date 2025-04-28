@@ -23,6 +23,9 @@ public class SFXManager : MonoBehaviour
     [SerializeField] private AudioClip[] dropperfireSounds;
     [SerializeField] private AudioClip[] dropperimpactSounds;
 
+    [Header("Collectable")]
+    [SerializeField] private AudioClip[] collectedSounds;
+
     [Header("Ambient")]
     [SerializeField] private bool PlayAmbient = false;
     private AudioSource ambientSource;
@@ -104,8 +107,13 @@ public class SFXManager : MonoBehaviour
             int randInt = Random.Range(0, footstepSounds.Length);
             audioSource.clip = footstepSounds[randInt];
         }
+        else if(clip == "collect")
+        {
+            int randInt = Random.Range(0, collectedSounds.Length);
+            audioSource.clip = collectedSounds[randInt];
+        }
 
-        audioSource.Play();
+            audioSource.Play();
 
         float clipLength = audioSource.clip.length;
 
