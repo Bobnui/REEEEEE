@@ -14,12 +14,13 @@ public class PlayerDeath : MonoBehaviour
     private Material defaultMaterial;
     private MataCharacterController characterController;
 
-    private Vector3 respawnLocation = Vector3.zero;
+    private Vector3 respawnLocation;
 
     private Checkpoint CurrentCheckpoint;
 
     private void Awake()
     {
+        respawnLocation = transform.position;
         defaultMaterial = GetComponent<SpriteRenderer>().material;
         _rb = GetComponent<Rigidbody2D>();
         dissolveAmount = 0;

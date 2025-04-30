@@ -5,13 +5,8 @@ using UnityEngine.UIElements;
 
 public class Collectable : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI collectableAmounts;
+    [SerializeField] private HUD hudREF;
     [SerializeField, Range(0, 10)] private float rotateSpeed = 1;
-    private float currentCollected;
-    private void Awake()
-    {
-        currentCollected = 0;
-    }
     private void FixedUpdate()
     {
         gameObject.transform.Rotate(0, rotateSpeed, 0, Space.Self);
@@ -21,13 +16,12 @@ public class Collectable : MonoBehaviour
         if (collision.tag == "Player")
         {
             Collect();
+            hudREF.Collect();
         }
     }
     void Collect()
     {
-        currentCollected += 1;
         SFXManager.Instance.PlayClip("collect", transform, 1, false);
-        collectableAmounts.text = currentCollected.ToString();
         Destroy(gameObject);
     }
 }

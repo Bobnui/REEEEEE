@@ -135,7 +135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 5725768817780927574, guid: 0ce8c0578d881904197e9071b5441fff, type: 3}
   barrelTransform: {fileID: 7530670608459778186}
-  spawnTime: 1
+  spawnTime: 1.5
+  firstShotDelay: 0
+  mySpeed: 7.03
+  myGravityScale: 1.87
 --- !u!1 &1866576554000800150
 GameObject:
   m_ObjectHideFlags: 0

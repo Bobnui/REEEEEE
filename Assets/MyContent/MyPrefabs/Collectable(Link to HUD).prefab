@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3274373431725641601}
   - component: {fileID: 5082863175361349798}
   - component: {fileID: 1424057105181115994}
-  - component: {fileID: 8041422642662157540}
+  - component: {fileID: 1126120996658301456}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &8041422642662157540
+--- !u!114 &1126120996658301456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectableAmounts: {fileID: 0}
-  rotateSpeed: 2
+  rotateSpeed: 1
 --- !u!1 &6436062358892377861
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8842322914121313864}
   m_Layer: 0
-  m_Name: Collectable(LINK HUD AMOUNT)
+  m_Name: Collectable(Link to HUD)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

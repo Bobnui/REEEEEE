@@ -35,7 +35,7 @@ public class MataCharacterController : MonoBehaviour
     private float _timeJumpPressed;
     private bool isGrounded;
     private bool hasAttemptedCoyote;
-    private bool hasEndedJump;
+    public bool hasEndedJump;
     public bool hasjumped = true; //set from jump pad
     #endregion
     #region Dash
@@ -96,8 +96,17 @@ public class MataCharacterController : MonoBehaviour
         jumpDown = PlayInput.instance.Jump;
         jumpHeld = PlayInput.instance.JumpHeld;
         dashDown = PlayInput.instance.Dash;
-        hoverDown = PlayInput.instance.Hover;
-        hoverHeld = PlayInput.instance.HoverHeld;
+        if(!isGrounded)
+        {
+            hoverDown = PlayInput.instance.Hover;
+            hoverHeld = PlayInput.instance.HoverHeld;
+        }
+        else
+        {
+            hoverDown = false;
+            hoverHeld = false;
+        }
+            
         hoverUp = PlayInput.instance.HoverUp;
         moveInput = PlayInput.instance.Move;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
