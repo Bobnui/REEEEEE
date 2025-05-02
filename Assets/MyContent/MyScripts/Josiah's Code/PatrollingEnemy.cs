@@ -15,7 +15,25 @@ public class PatrollingEnemy : MonoBehaviour
     private bool isPatrollingLeft = true;
     private float proximity = 0.02f;
 
+    private bool isAlive;
+
+    private void Awake()
+    {
+        isAlive = true;
+    }
+
     private void Update()
+    {
+        if(isAlive)
+        {
+            MoveEnemy();
+        }
+        else
+        {
+            //Move to ground level
+        }
+    }
+    private void MoveEnemy()
     {
         if (isPatrollingLeft)
         {
@@ -33,5 +51,9 @@ public class PatrollingEnemy : MonoBehaviour
                 isPatrollingLeft = true;
             }
         }
+    }
+    public void SetIsAlive(bool alive)
+    {
+        isAlive = alive;
     }
 }

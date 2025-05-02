@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8093285551649289624}
   - component: {fileID: 6685594509354673036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3419557771257875597}
   - component: {fileID: 17384700510417569}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 2016943330577783828}
   - component: {fileID: 5430715261118957797}
   - component: {fileID: -3054964622562898197}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CannonBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3dbef6aeeeac0947baa349baddc6d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9.13
-  gravityScale: 2.92
+  mySpeed: 5
+  myGravityScale: 0
 --- !u!114 &-3054964622562898197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,5 +301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathMaterial: {fileID: 2100000, guid: 53e8e31a5f3f7e8408d91e866d2e38e1, type: 2}
-  destroyOnTrigger: 1
   dissolveSpeed: 2.05
+  destroyOnTrigger: 1
+  objectType: 0
