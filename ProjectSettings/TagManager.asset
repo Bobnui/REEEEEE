@@ -50,6 +50,21 @@ TagManager:
   - name: Parallax 3
     uniqueID: 1880366409
     locked: 0
+  - name: Parallax 4
+    uniqueID: 805269515
+    locked: 0
+  - name: Parallax 5
+    uniqueID: 2980725071
+    locked: 0
+  - name: Parallax 6
+    uniqueID: 2930815787
+    locked: 0
+  - name: Parallax 7
+    uniqueID: 2005088453
+    locked: 0
+  - name: Parallax 8
+    uniqueID: 3781047287
+    locked: 0
   - name: Level Behind
     uniqueID: 4294574103
     locked: 0
@@ -58,9 +73,6 @@ TagManager:
     locked: 0
   - name: Level In Front
     uniqueID: 2579347229
-    locked: 0
-  - name: Parallax 4
-    uniqueID: 805269515
     locked: 0
   - name: Front of Scene
     uniqueID: 3864485985

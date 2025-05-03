@@ -10,6 +10,8 @@ public class Parallax : MonoBehaviour
 
     [SerializeField] private float parallaxEffect;
 
+    [SerializeField]private bool shouldShift;
+
     void Start()
     {
         startPos = transform.position.x;
@@ -23,14 +25,17 @@ public class Parallax : MonoBehaviour
 
         transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
 
+        if(shouldShift )
+        {
         //if background has scrolled to its bounds, offset it by its x size
-        if(movement > startPos +  length)
+        if(movement > startPos + length)
         {
             startPos += length;
         }
         else if (movement < startPos - length)
         {
             startPos -= length;
+        }
         }
     }
 }
