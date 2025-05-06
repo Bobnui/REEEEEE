@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: 08ace4195b63ac24083729fa9ce2e317
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1830935808692870943
+    second: Team Steam Tileset_0
+  - first:
+      213: -4203473779920721801
+    second: Team Steam Tileset_1
+  - first:
+      213: -628550723236599986
+    second: Team Steam Tileset_2
+  - first:
+      213: 3716721282052857966
+    second: Team Steam Tileset_3
+  - first:
+      213: 7904097086375246476
+    second: Team Steam Tileset_4
+  - first:
+      213: -8813272911807533397
+    second: Team Steam Tileset_5
+  - first:
+      213: 4461870037768679288
+    second: Team Steam Tileset_6
+  - first:
+      213: 2493626844579323158
+    second: Team Steam Tileset_7
+  - first:
+      213: -4330832213735629556
+    second: Team Steam Tileset_8
+  - first:
+      213: -236630056302898040
+    second: Team Steam Tileset_9
+  - first:
+      213: -453435878763524691
+    second: Team Steam Tileset_10
+  - first:
+      213: 5701327157169459701
+    second: Team Steam Tileset_11
+  - first:
+      213: 7717250966157486061
+    second: Team Steam Tileset_12
+  - first:
+      213: 7050064420635488045
+    second: Team Steam Tileset_13
+  - first:
+      213: -132440830029719168
+    second: Team Steam Tileset_14
+  - first:
+      213: -4768714470450738193
+    second: Team Steam Tileset_15
+  - first:
+      213: -5245263637287685781
+    second: Team Steam Tileset_16
+  - first:
+      213: -5356284572295949185
+    second: Team Steam Tileset_17
+  - first:
+      213: -543576241133655085
+    second: Team Steam Tileset_18
+  - first:
+      213: 8294032547029493038
+    second: Team Steam Tileset_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 12
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 171.5
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Team Steam Tileset_0
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 2221
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37da1fc3d94142441a3bd6023ffb06f6
+      internalID: -924173068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_1
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 2221
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a1895e33810f4459b6c3a4bc8c691d
+      internalID: 730919607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2221
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99a0057de1443649bcf57686c2317b7
+      internalID: 111614020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1844
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486b5f9e6a7fe5d499fb38188705691b
+      internalID: 112120111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1844
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affe41aa53dd97040bec7e84870415ec
+      internalID: 49082903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1844
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32e9fc7d825b674c895f87187d0c93f
+      internalID: -929723969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1476
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c6d078344934047b305393f4c0f6cb
+      internalID: -1127447914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1477
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915c0de52f71dfe4498722da2d83790a
+      internalID: -2038052351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1477
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1242da0b2a7204bbed6e00a684f545
+      internalID: 1872659924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_11
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1476
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287e7d64a87d0b446b4d29344c9ab1bf
+      internalID: -918792982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_12
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 1476
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca6deb6224592f42ab772a7a83bef5e
+      internalID: 718663679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_14
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1109
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ac6e20c8e49fe4aa87ef5f0edbf932
+      internalID: -1251070683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_15
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1109
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c72aa6c12e7c946989e4bcfb6e5ad8
+      internalID: -1112520402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_16
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1109
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a8e0130c227024c83c6516ea45f1ed
+      internalID: 1289423992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_17
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 1109
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a85d34ffd27a44ebf77ddcfebb04eb
+      internalID: 194829052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Team Steam Tileset_18
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 1110
+        width: 343
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 534d0fa3db019e745a3afae0219cb9e5
+      internalID: -416998409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ec8a3a448d6a1634ea13e91c2d878c5b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Team Steam Tileset_0: -924173068
+      Team Steam Tileset_1: 730919607
+      Team Steam Tileset_10: 1872659924
+      Team Steam Tileset_11: -918792982
+      Team Steam Tileset_12: 718663679
+      Team Steam Tileset_13: 1096067784
+      Team Steam Tileset_14: -1251070683
+      Team Steam Tileset_15: -1112520402
+      Team Steam Tileset_16: 1289423992
+      Team Steam Tileset_17: 194829052
+      Team Steam Tileset_18: -416998409
+      Team Steam Tileset_19: 900961499
+      Team Steam Tileset_2: 111614020
+      Team Steam Tileset_20: 93264625
+      Team Steam Tileset_21: 50396086
+      Team Steam Tileset_22: 1123997931
+      Team Steam Tileset_3: 112120111
+      Team Steam Tileset_4: 49082903
+      Team Steam Tileset_5: -929723969
+      Team Steam Tileset_6: 1094903164
+      Team Steam Tileset_7: 1564744901
+      Team Steam Tileset_8: -1127447914
+      Team Steam Tileset_9: -2038052351
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
