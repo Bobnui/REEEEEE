@@ -8,14 +8,12 @@ public class Zepplin : MonoBehaviour
     private GameObject player;
     private Rigidbody2D playerRigidbody;
     [SerializeField, Range(1, 10)] private float accel;
-    private float timer;
     private bool goingUp;
     private Vector2 startingPos;
     private void Awake()
     {
         startingPos = transform.position;
         isDone = false;
-        timer = 0f;
         goingUp = true;
         rigidBody = GetComponent<Rigidbody2D>();
     }

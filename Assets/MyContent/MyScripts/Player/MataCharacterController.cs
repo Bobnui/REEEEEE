@@ -63,11 +63,13 @@ public class MataCharacterController : MonoBehaviour
 
     private bool gamePaused = false;
     public bool isDead = false;
+    private bool iscoyote;
+    private float coyoteTimer;
     #endregion
     #region My Input
-    
-    
-        private bool jumpDown;
+
+
+    private bool jumpDown;
         private bool jumpHeld;
         private bool dashDown;
         private bool hoverDown;
@@ -143,6 +145,11 @@ public class MataCharacterController : MonoBehaviour
         GroundCheck();
         JumpHeight();
         ApplyMovement();
+        if(iscoyote)
+        {
+            Debug.Log(coyoteTimer);
+            coyoteTimer += Time.deltaTime;
+        }
     }
     private void Dash()
     {
@@ -188,9 +195,11 @@ public class MataCharacterController : MonoBehaviour
     }
     private void GroundCheck()
     {
+        
         Vector2 foot = transform.position + Vector3.down * _col.bounds.extents.y + (Vector3)_col.offset;
         if(Physics2D.Raycast(foot, Vector2.down, groundedCastDistance, groundLayer))
         {
+            iscoyote = false;
             hasjumped = false;
             isGrounded = true;
             airJumps = maxAirJumps;
@@ -200,19 +209,19 @@ public class MataCharacterController : MonoBehaviour
             {
                 Jump(0);
             }
-            if(hasAttemptedCoyote)
-            {
-                hasAttemptedCoyote = false;
-                if (_timer < _timeJumpPressed + coyoteTime)
-                {
-                    SFXManager.Instance.PlayClip("jump", transform, 1, false);
-                    Jump(0);
-                }
-            }
         }
         else
         {
             isGrounded = false;
+            CoyoteTimerStart();
+        }
+    }
+    private void CoyoteTimerStart()
+    {
+        if (!hasjumped && !iscoyote)
+        {
+            iscoyote = true;
+            coyoteTimer = 0;
         }
     }
     private void JumpCheck()
@@ -223,21 +232,17 @@ public class MataCharacterController : MonoBehaviour
             Jump(0);
 
         }
+        else if(coyoteTimer < coyoteTime)
+        {
+            SFXManager.Instance.PlayClip("jump", transform, 1, false);
+            Jump(0);
+        }
         else if(airJumps > 0)
         {
             SFXManager.Instance.PlayClip("jump", transform, 1, false);
             airJumps -= 1;
             Jump(0);
         }
-        else
-        {
-            Coyote();
-        }
-    }
-    private void Coyote()
-    {
-        hasAttemptedCoyote = true;
-        _timeJumpPressed = _timer;
     }
     private void JumpHeight()
     {
