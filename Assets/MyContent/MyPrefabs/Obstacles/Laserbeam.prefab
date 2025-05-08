@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.27, y: -4.2, z: 0}
-  m_LocalScale: {x: 7.336406, y: 0.1875, z: 1}
+  m_LocalScale: {x: 18.64364, y: 0.1875, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1715620067
-  m_SortingLayer: 6
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.31764707}
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathMaterial: {fileID: 2100000, guid: fdbf905d41e5b5d46a5bf918d47be9b9, type: 2}
-  dissolveSpeed: 0.42
+  dissolveSpeed: 1.64
   destroyOnTrigger: 0
   objectType: 0
 --- !u!82 &5212138985255771347

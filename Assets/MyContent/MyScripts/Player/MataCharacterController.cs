@@ -185,7 +185,7 @@ public class MataCharacterController : MonoBehaviour
     }
     private void Hover()
     {
-        SFXManager.Instance.PlayClip("hover", transform, 1, false);
+        //SFXManager.Instance.PlayClip("hover", transform, 1, false);
         isHovering = true;
         canHover = false;
     }

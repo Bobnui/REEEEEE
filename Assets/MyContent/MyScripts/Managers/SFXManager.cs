@@ -89,8 +89,9 @@ public class SFXManager : MonoBehaviour
         }
         else if (clip == "cannonimpact")
         {
-            int randInt = Random.Range(0, cannonimpactSounds.Length);
-            audioSource.clip = cannonimpactSounds[randInt];
+            //int randInt = Random.Range(0, cannonimpactSounds.Length);
+            //audioSource.clip = cannonimpactSounds[randInt];
+            return;
         }
         else if (clip == "dropperfire")
         {

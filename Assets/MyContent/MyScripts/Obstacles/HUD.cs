@@ -5,6 +5,7 @@ public class HUD : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI collectableAmount;
     private float collectionCounter;
+    [SerializeField] EndScreenCounter endscript;
 
     private void Awake()
     {
@@ -14,5 +15,6 @@ public class HUD : MonoBehaviour
     {
         collectionCounter += 1;
         collectableAmount.text = collectionCounter.ToString();
+        endscript.UpdateEndScreen(collectionCounter);
     }
 }
