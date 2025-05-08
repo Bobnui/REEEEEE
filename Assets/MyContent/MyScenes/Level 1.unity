@@ -8735,6 +8735,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &837095587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 45.42012
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -24.291225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827533919853141427, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987747559759806916, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
+      propertyPath: m_Name
+      value: Steam Dash
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
 --- !u!1 &884394884
 GameObject:
   m_ObjectHideFlags: 0
@@ -36972,6 +37029,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6880534781475030494, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 580715807, guid: 5d2d7f4ab1e201048be99e1dc5fc3488, type: 3}
+    - target: {fileID: 6880534781475030494, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
+      propertyPath: m_Color.b
+      value: 0.54432184
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880534781475030494, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880534781475030494, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
+      propertyPath: m_Color.r
+      value: 0.65939635
+      objectReference: {fileID: 0}
     - target: {fileID: 8773049117537796275, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
       propertyPath: coyoteTime
       value: 1
@@ -36984,6 +37057,10 @@ PrefabInstance:
       propertyPath: dashStrength
       value: 5.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8773049117537796275, guid: a01475c30a0bcb94094ffff2efddf490, type: 3}
+      propertyPath: dashParticles
+      value: 
+      objectReference: {fileID: 5523479070846621347, guid: aa29f29de8339fd448ccd46e4fe80d4d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38833,6 +38910,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1833408513}
     m_Modifications:
+    - target: {fileID: 1473030853136255823, guid: 0e26893914ab0fa4fb042e5f64b63ad7, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: f29b1b5bd38e1cb43902e578654fe2c3, type: 3}
+    - target: {fileID: 1473030853136255823, guid: 0e26893914ab0fa4fb042e5f64b63ad7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f29b1b5bd38e1cb43902e578654fe2c3, type: 3}
     - target: {fileID: 2596617000537443685, guid: 0e26893914ab0fa4fb042e5f64b63ad7, type: 3}
       propertyPath: m_Name
       value: Music Manager
@@ -38976,3 +39061,4 @@ SceneRoots:
   - {fileID: 1331589572}
   - {fileID: 700662194}
   - {fileID: 1223505628}
+  - {fileID: 837095587}

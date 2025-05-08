@@ -65,6 +65,9 @@ public class MataCharacterController : MonoBehaviour
     public bool isDead = false;
     private bool iscoyote;
     private float coyoteTimer;
+
+    [SerializeField] private ParticleSystem dashParticles;
+    private ParticleSystem dashParticleInstance;
     #endregion
     #region My Input
 
@@ -156,35 +159,29 @@ public class MataCharacterController : MonoBehaviour
         isDashing = true;
         isHovering = false;
         dashDirection = (_rb.position - mousePos) * -1;
-        if (dashDirection.x > 0 && dashDirection.y > 1)
+        if (dashDirection.x > 0)
         {
             dashDirection = new Vector2(1, 1);
         }
-        else if (dashDirection.x < 0 && dashDirection.y > 1)
+        else if (dashDirection.x < 0)
         {
             dashDirection = new Vector2(-1, 1);
         }
-        else if (dashDirection.x < 0 && dashDirection.y < -1)
+        dashVelocity = (dashDirection * dashStrength) * 10;
+        SpawnDashParticles(dashDirection.x);
+    }
+    private void SpawnDashParticles(float direction)
+    {
+        Quaternion rotation;
+        if(direction < 0)
         {
-            dashDirection = new Vector2(-1, -1);
-        }
-        else if (dashDirection.x > 0 && dashDirection.y < -1)
-        {
-            dashDirection = new Vector2(1, -1);
+            rotation = Quaternion.Euler(45, 90, 0);
         }
         else
         {
-            if (dashDirection.x > 0)
-            {
-                dashDirection = new Vector2(1, 0);
-            }
-            else if (dashDirection.x < 0)
-            {
-                dashDirection = new Vector2(-1, 0);
-            }
-
+            rotation = Quaternion.Euler(135, 90, 0);
         }
-        dashVelocity = (dashDirection * dashStrength) * 10;
+        dashParticles = Instantiate(dashParticles, transform.position, rotation);
     }
     private void Hover()
     {
@@ -194,7 +191,6 @@ public class MataCharacterController : MonoBehaviour
     }
     private void GroundCheck()
     {
-        
         Vector2 foot = transform.position + Vector3.down * _col.bounds.extents.y + (Vector3)_col.offset;
         if(Physics2D.Raycast(foot, Vector2.down, groundedCastDistance, groundLayer))
         {
@@ -229,9 +225,8 @@ public class MataCharacterController : MonoBehaviour
         {
             SFXManager.Instance.PlayClip("jump", transform, 1, false);
             Jump(0);
-
         }
-        else if(coyoteTimer < coyoteTime)
+        else if(coyoteTimer < coyoteTime && !hasjumped)
         {
             SFXManager.Instance.PlayClip("jump", transform, 1, false);
             Jump(0);
