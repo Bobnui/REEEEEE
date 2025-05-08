@@ -7,7 +7,6 @@ public class EndScreenCounter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI myText;
     public void UpdateEndScreen(float cum)
     {
-        Debug.Log(cum);
         myText.text = cum.ToString();
     }
 }
