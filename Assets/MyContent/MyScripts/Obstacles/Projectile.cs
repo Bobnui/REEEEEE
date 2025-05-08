@@ -20,6 +20,6 @@ public class Projectile : MonoBehaviour
     private void MoveProjectile()
     {
         _rb.gravityScale = myGravityScale;
-        _rb.AddForce(transform.up * mySpeed);
+        _rb.AddForce(transform.right * mySpeed * -1f);
     }
 }

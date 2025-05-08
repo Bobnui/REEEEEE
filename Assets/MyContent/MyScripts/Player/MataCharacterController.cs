@@ -147,7 +147,6 @@ public class MataCharacterController : MonoBehaviour
         ApplyMovement();
         if(iscoyote)
         {
-            Debug.Log(coyoteTimer);
             coyoteTimer += Time.deltaTime;
         }
     }
